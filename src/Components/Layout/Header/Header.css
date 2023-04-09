@@ -1,0 +1,11 @@
+.Header {
+	text-align: center;
+}
+
+.Header .menuList{
+    justify-content: space-evenly;
+}
+
+.Header *{
+    margin: 0.2rem;
+}

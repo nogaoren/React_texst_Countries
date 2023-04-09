@@ -1,0 +1,11 @@
+.CountriesCard {
+	
+}
+
+.CountriesCard .center{
+    justify-content: space-evenly;
+}
+
+.CountriesCard .cards{
+    flex-wrap: wrap;
+}

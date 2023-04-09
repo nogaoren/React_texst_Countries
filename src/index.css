@@ -1,13 +1,92 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --primary-color: #4D4D4D;
+  --secondary-color: #B46060;
+  --background-color: #FFF4E0;
+  --font-small: 20px; 
+  --font-medium: 30px; 
+  --font-large: 45px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: Poppins;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--primary-color);
+  background-color: var(--background-color);
+  font-size: var(--font-medium);
+}
+
+html, body, #root{
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centerColumn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuList{
+  font-size: var(--font-medium);
+}
+
+a{
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+a:visited, a:active{
+  color: var(--secondary-color);
+}
+
+a:hover{
+  font-weight: 800;
+}
+
+header{
+  justify-content: space-evenly;
+}
+
+input{
+  width: 20rem;
+}
+
+h2{
+  margin: 1rem;
+}
+
+h3{
+  margin: 0.5rem;;
+}
+
+.CountryCard {
+  margin: 1rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 5px 5px 10px var(--primary-color);
+  font-size: var(--font-small);
+}
+
+/* .CountryCard:hover, .CountryCard:active, .CountryCard:focus{
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  cursor: pointer;
+} */
+
+.flag{
+  width: 80px;
+  height: 50px;
 }

@@ -1,0 +1,20 @@
+.CountryTable {
+	font-size: var(--font-small);
+}
+
+table td, table th {
+    border: 1px solid var(--secondary-color);
+    padding: 8px;
+}
+
+table th{
+    text-align: left;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}
+
+/* table tr:hover{
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    cursor: pointer;
+} */
