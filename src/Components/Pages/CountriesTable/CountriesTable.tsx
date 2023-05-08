@@ -21,14 +21,13 @@ function CountriesTable(): JSX.Element {
                 <input type="text" placeholder="Search country's name or capital" className="CountryCard"
                 value={search} onChange={(e) => setSearch(e.target.value.toLowerCase())}/>
             </header>
-            <div className="center">
                 <table>
                     <thead>
                         <tr>
                             {header.map(h => <th key={h}>{h}</th>)}
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
                         {country.filter(c => c.name.toLowerCase().includes(search) || 
                                                             c.capital?.toLowerCase().includes(search))
                                 .map(c => 
@@ -43,8 +42,7 @@ function CountriesTable(): JSX.Element {
                                     )
                         }
                     </tbody>
-                </table>
-            </div>
+            </table>
         </div>
     );
 }
