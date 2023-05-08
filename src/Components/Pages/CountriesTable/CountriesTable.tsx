@@ -28,7 +28,7 @@ function CountriesTable(): JSX.Element {
                             {header.map(h => <th key={h}>{h}</th>)}
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody></tbody>
                         {country.filter(c => c.name.toLowerCase().includes(search) || 
                                                             c.capital?.toLowerCase().includes(search))
                                 .map(c => 
