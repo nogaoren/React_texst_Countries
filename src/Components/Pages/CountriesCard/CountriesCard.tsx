@@ -24,12 +24,9 @@ function CountriesCard(): JSX.Element {
             </header>
             <div className="cards center">
             {
-                (search.length > 0) ?
                 country.filter(c => c.name.toLowerCase().includes(search) || 
                                     c.capital?.toLowerCase().includes(search))
                                     .map(c => <CountryCard key={c.name} country={c}/>)
-                :
-                country.map(c => <CountryCard key={c.name} country={c}/>)
             }
             </div>
         </div>

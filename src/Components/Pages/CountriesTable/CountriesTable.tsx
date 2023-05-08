@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import "./CountriesTable.css";
 import { CountryModel } from "../../../Models/Country";
 import axios from "axios";
-import CountryTable from "../../Shared/CountryTable/CountryTable";
 
 function CountriesTable(): JSX.Element {
     const [country, setCountry] = useState<CountryModel[]>([]);
     const [search, setSearch] = useState<string>('');
+    const header = ['Name', 'Capital', 'Population', 'Flag'];
 
     useEffect(() => {
         axios.get('https://restcountries.com/v2/all')
@@ -22,13 +22,28 @@ function CountriesTable(): JSX.Element {
                 value={search} onChange={(e) => setSearch(e.target.value.toLowerCase())}/>
             </header>
             <div className="center">
-                {
-                    (search.length > 0) ?
-                    <CountryTable country={country.filter(c => c.name.toLowerCase().includes(search) || 
-                                                            c.capital?.toLowerCase().includes(search))}/>
-                    :
-                    <CountryTable country={country}/>
-                }
+                <table>
+                    <thead>
+                        <tr>
+                            {header.map(h => <th key={h}>{h}</th>)}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {country.filter(c => c.name.toLowerCase().includes(search) || 
+                                                            c.capital?.toLowerCase().includes(search))
+                                .map(c => 
+                                    <tr key={c.name}>
+                                        <td>{c.name}</td>
+                                        <td>{c.capital}</td>
+                                        <td>{c.population}</td>
+                                        <td>
+                                            <img className='flag' src={c.flags.png} alt={`${c.name}'s flag`} />
+                                        </td>
+                                    </tr>
+                                    )
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
     );
